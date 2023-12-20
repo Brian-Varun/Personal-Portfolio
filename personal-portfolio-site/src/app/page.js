@@ -1,61 +1,35 @@
 import Image from 'next/image'
 import styles from './page.module.css'
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbSeparator,
+} from '@chakra-ui/react'
 
 export default function Home() {
   return (
     <main className={styles.main}>
-      <div className={styles.description}>
-        <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h1>
-              Brian Manomaisupat
-            </h1>
-        </a>
-        <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2>
-              Resume
-            </h2>
-        </a>
-        <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2>
-              Experience
-            </h2>
-        </a>
-        <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2>
-              Projects
-            </h2>
-        </a>
-        <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2>
-              Contact
-            </h2>
-        </a>
-      </div>
+      <Breadcrumb spacing='120px' separator= ' ' fontWeight='medium' fontSize='large'>
+        <BreadcrumbItem>
+          <BreadcrumbLink href='#'>Brian Manomaisupat</BreadcrumbLink>
+        </BreadcrumbItem>
+        <BreadcrumbItem>
+          <BreadcrumbLink href='#'>Resume</BreadcrumbLink>
+        </BreadcrumbItem>
+
+        <BreadcrumbItem isCurrentPage>
+          <BreadcrumbLink href='#'>Experience</BreadcrumbLink>
+        </BreadcrumbItem>
+
+        <BreadcrumbItem isCurrentPage>
+          <BreadcrumbLink href='#'>Projects</BreadcrumbLink>
+        </BreadcrumbItem>
+
+        <BreadcrumbItem isCurrentPage>
+          <BreadcrumbLink href='#'>Contact</BreadcrumbLink>
+        </BreadcrumbItem>
+      </Breadcrumb>
 
       <div className={styles.title}>
         <h1>
