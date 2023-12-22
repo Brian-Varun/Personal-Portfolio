@@ -1,0 +1,23 @@
+.tag-container {
+    overflow: hidden;
+    width: 100%; /* Adjust this width based on your design */
+}
+
+@keyframes marquee {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+
+.tag-scroll {
+    display: flex;
+    animation: marquee 30s linear infinite; /* Adjust duration as needed */
+    white-space: nowrap;
+}
+
+.change-topic {
+    transition: opacity 0.5s ease-in-out;
+  }
+
+.change-topic.out {
+opacity: 0;
+}
