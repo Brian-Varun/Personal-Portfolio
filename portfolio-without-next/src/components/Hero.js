@@ -3,7 +3,6 @@ import { Flex, VStack, Box, Heading, Spacer, Text, HStack, Button, Divider, Tag,
 import { FaEnvelope, FaLinkedin, FaGithub, FaPython, FaHtml5, FaCss3, FaJsSquare, FaReact } from 'react-icons/fa';
 import './Hero.css';
 
-const Topic = "[insert item list here]";
 const SolidworksIcon = () => {
     return(
         <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="20" viewBox="10 0 50 50">
@@ -38,7 +37,7 @@ const doubleArray = [
 
 
 const Hero = () => {
-    const topics = ["Mechatronics Engineer", "Software Developer", "3D Modeller"];
+    const topics = ["Mechatronics Engineer", "Software Developer", "3D Model"];
     const [index, setIndex] = useState(0);
     const [animateOut, setAnimateOut] = useState(false);
     const [text, setText] = useState(topics[index]);
@@ -64,10 +63,10 @@ const Hero = () => {
       <Spacer /><Spacer />
         <Box>
           <Heading fontSize="42px" fontFamily="Clashgrotesk, sans-serif;" >
-            You need a <Text as="span" color="red" className={`change-topic ${animateOut ? 'out' : ''}`}>{text}</Text>          
+            You need a <Text as="span" color="red" className={`change-topic ${animateOut ? 'out' : ''}`}>{text},</Text>          
             </Heading>
         </Box>
-        <Box><Heading fontSize="42px" fontFamily="Clashgrotesk, sans-serif;">I make it happen</Heading></Box>
+        <Box><Heading fontSize="42px" fontFamily="Clashgrotesk, sans-serif;">I make it happen.</Heading></Box>
         <Spacer></Spacer><Spacer /><Spacer />
         <Box>
             <Text fontSize="18px" lineHeight="17px" fontFamily="Clashgrotesk, sans-serif;" color="gray"> 

@@ -11,6 +11,7 @@ import {
 import { FaSun, FaMoon } from "../node_modules/react-icons/fa";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
+import Experiences from "./components/Experience";
 
 function App() {
 	const { colorMode, toggleColorMode } = useColorMode();
@@ -20,6 +21,7 @@ function App() {
 		<VStack>
 			<Navbar />
 			<Hero />
+			<Experiences />
 		</VStack>
 	);
 }
