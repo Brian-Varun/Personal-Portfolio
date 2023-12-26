@@ -16,10 +16,10 @@ const Contact = () => {
 
 
   return ( 
-    <Flex justify="flex-start" width="100%" padding="10">
-      <VStack align="flex-start" spacing="5" width='100%'>
+    <Flex justify="flex-start" width="100%" padding="10" >
+      <VStack align="flex-start" spacing="5" width='100%' >
         <div className='tag-container' width='100%' >
-                <HStack spacing={38} padding="1" className='tag-scroll'>
+                <HStack spacing={38} padding="1" className='tag-scroll' >
                 <Flex align="center">
                     <Heading color='black' fontSize={100}>
                         Get In Touch 
@@ -47,7 +47,7 @@ const Contact = () => {
                 </HStack>
             </div>
             <Divider />
-            <HStack width="100%" spacing={4} justify='center'>
+            <HStack width="100%" spacing={4} justify='center' flexWrap="wrap">
                 <Button leftIcon={<FaEnvelope />} colorScheme='red' variant='outline'>
                     kothandv@mcmaster.ca
                 </Button>

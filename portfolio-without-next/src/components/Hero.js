@@ -58,8 +58,9 @@ const Hero = () => {
     }, [index, topics]);
 
   return ( 
-    <Flex justify="flex-start" width="100%" padding="10">
-      <VStack align="flex-start" spacing="3">
+    
+    <Flex justify="flex-start" width="100%" padding="2" flexDirection={{ base: 'column', md: 'row' }}>
+      <VStack align="flex-start" spacing="3" flexWrap="wrap">
       <Spacer /><Spacer />
         <Box>
           <Heading fontSize="42px" fontFamily="Clashgrotesk, sans-serif;" >
@@ -74,7 +75,7 @@ const Hero = () => {
             </Text>
         </Box>
         <Text color="gray" fontSize="15"> Pinned Projects </Text>
-        <HStack paddingBottom="1">
+        <HStack paddingBottom="1" flexWrap="wrap">
           
           <Button width="200px" colorScheme='gray' variant='outline'>
             Project 1
@@ -87,12 +88,12 @@ const Hero = () => {
           </Button>
 
         </HStack>
-        <Box paddingY ="1" width="60%">
+        <Box paddingY ="1" width="100%">
           <Text>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum a rutrum velit. Donec semper volutpat mi, et tempor mi dapibus eget. Phasellus vel massa ut est mollis euismod. Morbi at arcu tempus, dignissim purus sit amet, pellentesque lorem. Vestibulum ultrices mi non eleifend dictum. Morbi in varius odio, non tempor tortor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec sed blandit dui. Cras eget mi rutrum, volutpat lectus at, volutpat erat. Integer a dapibus nunc. Nulla pharetra justo metus.
           </Text>
         </Box>
-        <HStack paddingY="1">
+        <HStack paddingY="1" flexWrap="wrap" >
           <Button leftIcon={<FaEnvelope />} colorScheme='red' variant='outline'>
             kothandv@mcmaster.ca
           </Button>
@@ -111,20 +112,23 @@ const Hero = () => {
         </Button>
         </HStack>
         <Spacer /><Spacer /><Spacer /><Spacer />
-        <div className='tag-container' >
-            <HStack spacing={4} padding="1" className='tag-scroll' width="100%">
-                {doubleArray.map((item, index) => (
-                    <Tag key={index} size="lg" variant="outline" colorScheme="">
-                        <TagLeftIcon as={item[0]} />
-                        <TagLabel>{item[1]}</TagLabel>
-                    </Tag>
-                ))}
-            </HStack>
-        </div>
+        
+        <Box className='tag-container' width={{ base: '100%'}}>
+          <HStack spacing={10} padding="1" className='tag-scroll'> 
+            {doubleArray.map((item, index) => (
+              <Tag key={index} size="m" variant="outline" colorScheme="">
+                <TagLeftIcon as={item[0]} />
+                <TagLabel>{item[1]}</TagLabel>
+              </Tag>
+            ))}
+          </HStack>
+        </Box>
+
         <Divider width="100%" borderColor="gray.400" />
 
       </VStack>
     </Flex>
+
   );
 };
 
