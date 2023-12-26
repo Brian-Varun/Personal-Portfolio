@@ -20,7 +20,7 @@ const Navbar = () => {
       justify="space-between"
       align="center"
       width="100%"
-      padding="2"
+      padding="5"
     >
       <Box fontWeight="bold" fontSize="20px" paddingY="3" paddingX="9">
         Varun

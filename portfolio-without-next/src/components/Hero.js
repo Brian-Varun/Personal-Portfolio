@@ -59,7 +59,7 @@ const Hero = () => {
 
   return ( 
     
-    <Flex justify="flex-start" width="100%" padding="2" flexDirection={{ base: 'column', md: 'row' }}>
+    <Flex justify="flex-start" width="100%" padding="10" flexDirection={{ base: 'column', md: 'row' }}>
       <VStack align="flex-start" spacing="3" flexWrap="wrap">
       <Spacer /><Spacer />
         <Box>
