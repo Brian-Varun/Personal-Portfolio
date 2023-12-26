@@ -1,6 +1,3 @@
-// Filename - App.js
-
-import { IconButton } from "@chakra-ui/button";
 import { useColorMode } from "@chakra-ui/color-mode";
 import {
 	Flex,
@@ -8,20 +5,21 @@ import {
 	Heading,
 	Spacer,
 } from "@chakra-ui/layout";
-import { FaSun, FaMoon } from "../node_modules/react-icons/fa";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Experiences from "./components/Experience";
+import Projects from "./components/Projects";
+import Contact from "./components/Contact";
 
 function App() {
-	const { colorMode, toggleColorMode } = useColorMode();
-	const isDark = colorMode === "dark";
-	return (
 
+	return (
 		<VStack>
 			<Navbar />
 			<Hero />
 			<Experiences />
+			<Projects />
+			<Contact />
 		</VStack>
 	);
 }

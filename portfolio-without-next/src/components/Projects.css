@@ -1,0 +1,39 @@
+/* .image-zoom {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+
+.image-zoom:hover {
+    transform: scale(1.1);
+}
+
+*/
+/* .icon-container {
+    display: none;
+    position: absolute;
+    left: 25px;
+    bottom: 15px;
+    z-index: 1;
+} */
+
+/* .text:hover + .icon-container {
+    display: block;
+}  */
+.link-icon {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+.image{
+    transition: transform 0.3s ease;
+}
+  
+  .card-container:hover .link-icon {
+    opacity: 1;
+  }
+
+  .card-container:hover .image {
+    transform: scale(1.1);
+  }

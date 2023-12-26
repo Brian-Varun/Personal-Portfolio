@@ -13,7 +13,10 @@ const Experiences = () => {
     <Flex justify="flex-start" width="100%" padding="10">
       <VStack align="flex-start" spacing="5">
         <Heading width="60%">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum a rutrum velit. Donec semper volutpat mi, et tempor mi tibulum a rutrum velit. Donec semper volutpat mi, et tempor
+        Experience        
+        </Heading>
+        <Heading width="60%" fontWeight={30}>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum a rutrum velit. Donec semper volutpat mi, et tempor mi tibulum a rutrum velit. Donec semper volutpat mi, et tempor.
         </Heading>
         <Flex flexDirection={{ base: 'column', md: 'row' }}>
         <HStack spacing={5} padding="3"  flexWrap="wrap">

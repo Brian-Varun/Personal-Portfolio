@@ -85,9 +85,7 @@ const Hero = () => {
           <Button width="200px" colorScheme='gray' variant='outline'>
             Project 3
           </Button>
-          <Button width="200px" colorScheme='gray' variant='outline'>
-            Project 4
-          </Button>
+
         </HStack>
         <Box paddingY ="1" width="60%">
           <Text>
@@ -96,14 +94,21 @@ const Hero = () => {
         </Box>
         <HStack paddingY="1">
           <Button leftIcon={<FaEnvelope />} colorScheme='red' variant='outline'>
-            Email
+            kothandv@mcmaster.ca
           </Button>
-          <Button leftIcon={<FaLinkedin />} colorScheme='blue' variant='outline'>
+          <Button leftIcon={<FaLinkedin />} colorScheme='linkedin' variant='outline'>
             LinkedIn
           </Button>
-          <Button leftIcon={<FaGithub />} colorScheme='green' variant='outline'>
+          <Button leftIcon={<FaGithub />} bgColor='#333' textColor='white' variant='outline'
+            sx={{
+              '&:hover': {
+                bgColor: "white",
+                textColor: 'black',
+              },
+            }}
+          >
             Github
-          </Button>
+        </Button>
         </HStack>
         <Spacer /><Spacer /><Spacer /><Spacer />
         <div className='tag-container' >
