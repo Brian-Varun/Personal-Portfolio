@@ -112,7 +112,7 @@ const Hero = () => {
         </HStack>
         <Spacer /><Spacer /><Spacer /><Spacer />
         <div className='tag-container' >
-            <HStack spacing={4} padding="1" className='tag-scroll'>
+            <HStack spacing={4} padding="1" className='tag-scroll' width="100%">
                 {doubleArray.map((item, index) => (
                     <Tag key={index} size="lg" variant="outline" colorScheme="">
                         <TagLeftIcon as={item[0]} />
