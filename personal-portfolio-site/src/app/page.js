@@ -1,95 +1,54 @@
 import Image from 'next/image'
 import styles from './page.module.css'
+import { Wrap, WrapItem, HStack, Text, Center, Square, Circle, AbsoluteCenter, Divider, Box, Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbSeparator, SimpleGrid, Grid, GridItem, Container, Flex, Spacer } from '@chakra-ui/react'
 
 export default function Home() {
   return (
     <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.js</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+    
+      <Breadcrumb spacing='100px' separator= ' ' fontWeight='medium' fontSize='large'>
+        <BreadcrumbItem>
+          <BreadcrumbLink href='#'>Brian Manomaisupat</BreadcrumbLink>
+        </BreadcrumbItem>
+        <BreadcrumbItem>
+          <BreadcrumbLink href='#'>Resume</BreadcrumbLink>
+        </BreadcrumbItem>
+        <BreadcrumbItem>
+          <BreadcrumbLink href='#'>Experience</BreadcrumbLink>
+        </BreadcrumbItem>
+        <BreadcrumbItem>
+          <BreadcrumbLink href='#'>Projects</BreadcrumbLink>
+        </BreadcrumbItem>
+        <BreadcrumbItem>
+          <BreadcrumbLink href='#'>Contact</BreadcrumbLink>
+        </BreadcrumbItem>
+      </Breadcrumb>
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+      <SimpleGrid minChildWidth='1400px' spacing='4px'>
+      <Text fontSize='50px'>You need a [     ]</Text>
+      <Text fontSize='50px'>I make it happen</Text>
+      <Box bg='black' height='80px'></Box>
+      <Text fontSize='20px'>Pinned Projects</Text>
+        <Grid templateColumns='repeat(2, 1fr)' gap={6}>
+          <GridItem w='100%' h='10' bg='blue.500' />
+          <GridItem w='100%' h='10' bg='blue.500' />
+        </Grid>
+        <Box bg='white' height='80px'></Box>
+        <Box bg='black' height='50px'></Box>
+        <Wrap>
+          <WrapItem>
+            <Text fontSize='20px'>Desc Desc Desc Desc Desc Desc Desc Desc Desc Desc Desc Desc Desc Desc Desc Desc Desc Desc  </Text>
+          </WrapItem>
+        </Wrap>
+      </SimpleGrid>
 
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+      <Wrap>
+        <WrapItem>
+          <Center w='1800px' h='80px' bg='red.200'>
+          <Text fontSize='50px'>Stuff we know Stuff we know Stuff we know Stuff we know </Text>
+          </Center>
+        </WrapItem>
+      </Wrap>
     </main>
   )
 }
