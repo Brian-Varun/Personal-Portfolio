@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Flex, VStack, Box, Heading, Spacer, Text, HStack, Button, Divider, Tag, TagLeftIcon, TagLabel } from '@chakra-ui/react';
 import { FaEnvelope, FaLinkedin, FaGithub, FaPython, FaHtml5, FaCss3, FaJsSquare, FaReact } from 'react-icons/fa';
-import './Hero.css';
 
 
 const SolidworksIcon = () => {
