@@ -15,7 +15,7 @@ const Experiences = () => {
         <Heading width="60%">
         Experience        
         </Heading>
-        <Heading width="60%" fontWeight={30}>
+        <Heading width="100%" fontWeight={30}>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum a rutrum velit. Donec semper volutpat mi, et tempor mi tibulum a rutrum velit. Donec semper volutpat mi, et tempor.
         </Heading>
         <Flex flexDirection={{ base: 'column', md: 'row' }}>

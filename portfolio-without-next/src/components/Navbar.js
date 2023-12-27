@@ -6,24 +6,41 @@ import {
   Button,
   useBreakpointValue,
   Spacer,
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem,
 } from '@chakra-ui/react';
 
 const Navbar = () => {
-  const isMobile = useBreakpointValue({ base: true, md: false });
+  const mobileNav = useBreakpointValue({ base: true, md: false });
 
   return (
     <Flex
-      width="100%"
-      justify={isMobile ? 'flex-start' : 'center'} // Adjusted justify property
-      direction={isMobile ? 'row' : 'row'}
+      justify="space-between"
       align="center"
+      width="100%"
+      padding="5"
     >
-      <Box fontWeight="bold" fontSize="20px" flex="1" paddingY="3" paddingX="9"   textAlign={isMobile ? 'left' : 'left'} marginBottom={isMobile ? '2' : '0'}>
+      <Box fontWeight="bold" fontSize="20px" paddingY="3" paddingX="9">
         Varun
       </Box>
-      {!isMobile && (
-        <HStack spacing="20" paddingX="10">
-          <Spacer></Spacer>
+
+      {mobileNav ? (
+        <Menu>
+          <MenuButton as={Button} variant="link" size="lg">
+            ☰
+          </MenuButton>
+          <MenuList>
+            <MenuItem variant="link">Resume</MenuItem>
+            <MenuItem variant="link">Experience</MenuItem>
+            <MenuItem variant="link">Projects</MenuItem>
+            <MenuItem variant="link">Contact</MenuItem>
+          </MenuList>
+        </Menu>
+      ) : (
+        <HStack spacing="20" flexWrap="wrap">
+          <Spacer />
           <Button variant="link">Resume</Button>
           <Button variant="link">Experience</Button>
           <Button variant="link">Projects</Button>

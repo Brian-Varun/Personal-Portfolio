@@ -7,7 +7,7 @@ import './Projects.css';
 const Projects = () => {
 
   return ( 
-    <Flex justify="flex-start" width="100%" padding="10">
+    <Flex justify="flex-start" width="100%" padding="10" >
       <VStack align="flex-start" spacing="5" width="100%">
         <Heading >
         Projects        
