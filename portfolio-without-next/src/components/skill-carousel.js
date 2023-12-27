@@ -1,7 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { Component } from "react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import { Flex, VStack, Box, Heading, Spacer, Text, HStack, Button, Divider, Tag, TagLeftIcon, TagLabel } from '@chakra-ui/react';
+import { MdOutlineArrowBackIosNew, MdArrowForwardIos, MdCircle } from "react-icons/md";
 import { FaEnvelope, FaLinkedin, FaGithub, FaPython, FaHtml5, FaCss3, FaJsSquare, FaReact } from 'react-icons/fa';
-import './Hero.css';
 
 
 const SolidworksIcon = () => {
@@ -36,89 +39,64 @@ const doubleArray = [
     [FaReact, 'React'],
 ];
 
+export default class Skills extends Component {
+  render() {
+    const sliderSettings = {
+      dots: false,
+      swipeToSlide: true,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 5,
+      slidesToScroll: 1,
+      lazyLoad: false,
+      autoplay: true,
+      speed: 2500,
+      autoplaySpeed: 2500,
+      cssEase: "linear",
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            infinite: true,
+            dots: false,
+          },
+        },
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 1,
+            initialSlide: 1,
+            rows: 2,
+          },
+        },
+      ],
+    };
 
-const Hero = () => {
-    const topics = ["Mechatronics Engineer", "Software Developer", "3D Model"];
-    const [index, setIndex] = useState(0);
-    const [animateOut, setAnimateOut] = useState(false);
-    const [text, setText] = useState(topics[index]);
-  
-    useEffect(() => {
-      const interval = setInterval(() => {
-        setAnimateOut(true);
-        setTimeout(() => {
-          setIndex((prevIndex) => (prevIndex + 1) % topics.length);
-          setText(topics[index]);
-          setAnimateOut(false);
-        }, 500); 
-      }, 3000); 
-  
-      return () => {
-        clearInterval(interval);
-      };
-    }, [index, topics]);
-    
-  return ( 
-    
-    <Flex justify="flex-start" width="100%" padding="10" flexDirection={{ base: 'column', md: 'row' }}>
-      <VStack align="flex-start" spacing="3" flexWrap="wrap">
-      <Spacer /><Spacer />
-        <Box>
-          <Heading fontSize="42px" fontFamily="Clashgrotesk, sans-serif;" >
-            You need a <Text as="span" color="red" className={`change-topic ${animateOut ? 'out' : ''}`}>{text},</Text>          
-            </Heading>
-        </Box>
-        <Box><Heading fontSize="42px" fontFamily="Clashgrotesk, sans-serif;">I make it happen.</Heading></Box>
-        <Spacer></Spacer><Spacer /><Spacer />
-        <Box>
-            <Text fontSize="18px" lineHeight="17px" fontFamily="Clashgrotesk, sans-serif;" color="gray"> 
-                Varun Kothandaraman / Mechatronics Student @ McMaster 
-            </Text>
-        </Box>
-        <Text color="gray" fontSize="15"> Pinned Projects </Text>
-        <HStack paddingBottom="1" flexWrap="wrap">
-          
-          <Button width="200px" colorScheme='gray' variant='outline'>
-            Project 1
-          </Button>
-          <Button width="200px" colorScheme='gray' variant='outline'>
-            Project 2
-          </Button>
-          <Button width="200px" colorScheme='gray' variant='outline'>
-            Project 3
-          </Button>
-
-        </HStack>
-        <Box paddingY ="1" width="100%">
-          <Text>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum a rutrum velit. Donec semper volutpat mi, et tempor mi dapibus eget. Phasellus vel massa ut est mollis euismod. Morbi at arcu tempus, dignissim purus sit amet, pellentesque lorem. Vestibulum ultrices mi non eleifend dictum. Morbi in varius odio, non tempor tortor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec sed blandit dui. Cras eget mi rutrum, volutpat lectus at, volutpat erat. Integer a dapibus nunc. Nulla pharetra justo metus.
-          </Text>
-        </Box>
-        <HStack paddingY="1" flexWrap="wrap" >
-          <Button leftIcon={<FaEnvelope />} colorScheme='red' variant='outline'>
-            kothandv@mcmaster.ca
-          </Button>
-          <Button leftIcon={<FaLinkedin />} colorScheme='linkedin' variant='outline'>
-            LinkedIn
-          </Button>
-          <Button leftIcon={<FaGithub />} bgColor='#333' textColor='white' variant='outline'
-            sx={{
-              '&:hover': {
-                bgColor: "white",
-                textColor: 'black',
-              },
-            }}
-          >
-            Github
-        </Button>
-        </HStack>
-        <Spacer /><Spacer /><Spacer />
+    return (
         
-        
-      </VStack>
-    </Flex>
+        <Box width="90%" padding="0 0px">
+        <Slider {...sliderSettings}>
+          {doubleArray.map((item, index) => (
+            <div key={index}>
+              <Tag size="m" variant="outline" colorScheme="">
+                <TagLeftIcon as={item[0]} />
+                <TagLabel>{item[1]}</TagLabel>
+              </Tag>
+            </div>
+          ))}
+        </Slider>
+        <Divider width="100%" borderColor="gray.400" />
+        {/* This is for Experience */}
+        <Heading width="60%" paddingTop={5}>
+        Experience        
+        </Heading>
+        <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum a rutrum velit. Donec semper volutpat mi, et tempor mi tibulum a rutrum velit. Donec semper volutpat mi, et tempor.</Text>
 
-  );
-};
-
-export default Hero;
+      </Box>
+   
+    );
+  }
+}
