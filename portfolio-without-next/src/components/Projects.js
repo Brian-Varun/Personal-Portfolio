@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Flex, VStack, Box, Heading, Icon, Text, HStack, Button, Divider, Tag, TagLeftIcon, TagLabel, Card, CardHeader, CardBody, CardFooter, Image, LinkBox, LinkOverlay, SlideFade  } from '@chakra-ui/react';
-import './Hero.css';
 import { BsArrowUpRightSquare  } from 'react-icons/bs';
-
 import './Projects.css';
+
 const Projects = () => {
 
   return ( 

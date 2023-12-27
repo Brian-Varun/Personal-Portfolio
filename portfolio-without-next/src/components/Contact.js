@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Flex, VStack, Box, Heading, Spacer, Text, HStack, Button, Divider, Tag, TagLeftIcon, TagLabel, Card, CardHeader, CardBody, CardFooter, Tab } from '@chakra-ui/react';
-import './Hero.css';
+import { Flex, VStack, Box, Heading, Spacer, Text, HStack, Button, Divider, Tag, TagLeftIcon, TagLabel, Card, CardHeader, CardBody, CardFooter, Tab, useBreakpointValue } from '@chakra-ui/react';
 import { MdOutlineArrowOutward, MdOutlineArrowCircleUp } from "react-icons/md";
 import { FaEnvelope, FaPhone, FaLinkedin, FaGithub, Facode, FaHeart, FaReact } from 'react-icons/fa';
 
@@ -12,40 +11,47 @@ const scrollToTop = () => {
     });
   };
 
+  const scrollStyle = {
+    width: '100%',
+    '--time': '20s', // Custom property
+    // Add other styles as needed
+  };
+
 const Contact = () => {
 
+    const shouldRenderSecondHeading = useBreakpointValue({ base: false, md: true });
 
   return ( 
     <Flex justify="flex-start" width="100%" padding="10" >
-      <VStack align="flex-start" spacing="5" width='100%' >
-        <div className='tag-container' width='100%' >
-                <HStack spacing={38} padding="1" className='tag-scroll' >
-                <Flex align="center">
-                    <Heading color='black' fontSize={100}>
-                        Get In Touch 
-                    </Heading>
-                    <MdOutlineArrowOutward style={{ marginLeft: "10px" }} size={90} color="black" />
-                </Flex>
-                <Flex align="center">
-                    <Heading color='black' fontSize={100}>
-                        Get In Touch 
-                    </Heading>
-                    <MdOutlineArrowOutward style={{ marginLeft: "10px" }} size={90} color="black" />
-                </Flex>
-                <Flex align="center">
-                    <Heading color='black' fontSize={100}>
-                        Get In Touch 
-                    </Heading>
-                    <MdOutlineArrowOutward style={{ marginLeft: "10px" }} size={90} color="black" />
-                </Flex>
-                <Flex align="center">
-                    <Heading color='black' fontSize={100}>
-                        Get In Touch 
-                    </Heading>
-                    <MdOutlineArrowOutward style={{ marginLeft: "10px" }} size={90} color="black" />
-                </Flex>
-                </HStack>
-            </div>
+      <VStack align="flex-start" spacing="5" width='100%' overflow="hidden">
+      <Flex width="100%" justify='center'>
+  {shouldRenderSecondHeading ? (
+    <div>
+        <Flex width="100%" justify='center' align='center'>
+            <Heading color='black' fontSize={100}>
+                Get In Touch
+                <Box display="inline-block" ml="2" verticalAlign="middle">
+                <MdOutlineArrowOutward size={90} color='black' />
+                </Box>
+            </Heading>
+        </Flex>
+    </div>
+  ) : (
+    <div>
+        <Flex width="100%" justify='center' align='center'>
+            <Heading color='black' fontSize={70}>
+                Get In Touch
+                <Box display="inline-block" ml="2" verticalAlign="middle">
+                <MdOutlineArrowOutward size={50} color='black' />
+                </Box>
+            </Heading>
+        </Flex>
+     </div>
+  )}
+ 
+</Flex>
+      
+
             <Divider />
             <HStack width="100%" spacing={4} justify='center' flexWrap="wrap">
                 <Button leftIcon={<FaEnvelope />} colorScheme='red' variant='outline'>

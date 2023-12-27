@@ -11,6 +11,7 @@ export default class Experiences extends Component {
       dots: true,
       infinite: true,
       speed: 500,
+      swipeToSlide: true,
       slidesToShow: 3,
       slidesToScroll: 1,
       lazyLoad: true,
