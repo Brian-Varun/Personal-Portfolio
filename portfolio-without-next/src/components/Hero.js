@@ -125,7 +125,11 @@ const Hero = () => {
         </Box>
 
         <Divider width="100%" borderColor="gray.400" />
-
+        {/* This is for Experience */}
+        <Heading width="60%">
+        Experience        
+        </Heading>
+        <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum a rutrum velit. Donec semper volutpat mi, et tempor mi tibulum a rutrum velit. Donec semper volutpat mi, et tempor.</Text>
       </VStack>
     </Flex>
 
