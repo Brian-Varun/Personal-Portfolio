@@ -14,7 +14,7 @@ import Skills from "./components/skill-carousel";
 function App() {
   return (
 	<Box width={{ base: "auto"}}>
-		    <VStack spacing={4} p={4} maxW="100%" align="center">
+		  <VStack spacing={4} p={0} maxW="100%" align="center">
       <Navbar />
       <Hero />
       <Skills />

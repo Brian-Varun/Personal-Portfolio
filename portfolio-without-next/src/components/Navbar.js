@@ -12,6 +12,10 @@ import {
   MenuItem,
 } from '@chakra-ui/react';
 
+import { experienceID } from './Experience';
+
+
+
 const Navbar = () => {
   const mobileNav = useBreakpointValue({ base: true, md: false });
 
@@ -23,7 +27,7 @@ const Navbar = () => {
       padding="5"
     >
       <Box fontWeight="bold" fontSize="20px" paddingY="3" paddingX="9">
-        Varun
+        Varuṇ
       </Box>
 
       {mobileNav ? (
@@ -41,10 +45,10 @@ const Navbar = () => {
       ) : (
         <HStack spacing="20" flexWrap="wrap">
           <Spacer />
-          <Button variant="link">Resume</Button>
-          <Button variant="link">Experience</Button>
-          <Button variant="link">Projects</Button>
-          <Button variant="link">Contact</Button>
+          <Button variant="link" >Resume</Button>
+          <Button variant="link" onClick={() => { window.location.href = './Experience#experience'; }} >Experience</Button>
+          <Button variant="link" >Projects</Button>
+          <Button variant="link" onClick={() => { window.location.href = './Contact#contact'; }}>Contact</Button>
         </HStack>
       )}
     </Flex>

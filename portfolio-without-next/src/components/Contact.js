@@ -24,11 +24,11 @@ const Contact = () => {
   return ( 
     <Flex justify="flex-start" width="100%" padding="10" >
       <VStack align="flex-start" spacing="5" width='100%' overflow="hidden">
-      <Flex width="100%" justify='center'>
+      <Flex width="100%" justify='left'>
   {shouldRenderSecondHeading ? (
     <div>
-        <Flex width="100%" justify='center' align='center'>
-            <Heading color='black' fontSize={100}>
+        <Flex width="100%" justify='center' align='left'>
+            <Heading color='black' fontSize={100} id="contact">
                 Get In Touch
                 <Box display="inline-block" ml="2" verticalAlign="middle">
                 <MdOutlineArrowOutward size={90} color='black' />
@@ -39,7 +39,7 @@ const Contact = () => {
   ) : (
     <div>
         <Flex width="100%" justify='center' align='center'>
-            <Heading color='black' fontSize={70}>
+            <Heading color='black' fontSize={70} id="contact">
                 Get In Touch
                 <Box display="inline-block" ml="2" verticalAlign="middle">
                 <MdOutlineArrowOutward size={50} color='black' />
@@ -52,8 +52,8 @@ const Contact = () => {
 </Flex>
       
 
-            <Divider />
-            <HStack width="100%" spacing={4} justify='center' flexWrap="wrap">
+
+            <HStack width="100%" spacing={4} justify='left' flexWrap="wrap">
                 <Button leftIcon={<FaEnvelope />} colorScheme='red' variant='outline'>
                     kothandv@mcmaster.ca
                 </Button>
@@ -74,7 +74,7 @@ const Contact = () => {
                     Github
                 </Button>
             </HStack>
-            <HStack width="100%" spacing={4} justify='center' as="article">
+            <HStack width="100%" spacing={4} justify='left' as="article">
                 <Button variant='link'onClick={scrollToTop} leftIcon={<MdOutlineArrowCircleUp/>}>
                     Back To Top
                 </Button>

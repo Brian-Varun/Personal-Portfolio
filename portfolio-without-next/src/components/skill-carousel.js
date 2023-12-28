@@ -77,7 +77,7 @@ export default class Skills extends Component {
 
     return (
         
-        <Box width="90%" padding="0 0px">
+        <Box width="100%" paddingX={10}>
         <Slider {...sliderSettings}>
           {doubleArray.map((item, index) => (
             <div key={index}>
@@ -90,7 +90,7 @@ export default class Skills extends Component {
         </Slider>
         <Divider width="100%" borderColor="gray.400" />
         {/* This is for Experience */}
-        <Heading width="60%" paddingTop={5}>
+        <Heading width="100%" paddingTop={10} id="experience">
         Experience        
         </Heading>
         <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum a rutrum velit. Donec semper volutpat mi, et tempor mi tibulum a rutrum velit. Donec semper volutpat mi, et tempor.</Text>
@@ -100,3 +100,4 @@ export default class Skills extends Component {
     );
   }
 }
+

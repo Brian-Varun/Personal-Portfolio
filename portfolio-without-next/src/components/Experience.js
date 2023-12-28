@@ -80,7 +80,7 @@ export default class Experiences extends Component {
                         <TagLabel>Now</TagLabel>
                     </Tag>
                     <CardHeader>
-                        <Heading paddingBottom={2}>Dynamics Team Member</Heading>
+                        <Heading paddingBottom={2}>Dynamics </Heading>
                         <Text>McMaster Solar Car</Text>
                         <Text color="gray">Suspension Subteam</Text>
                     </CardHeader>
@@ -114,7 +114,25 @@ export default class Experiences extends Component {
                 </Flex>
             </Card>
           </Box>
+          <Box px={2}>
+          <Card height="320px" variant="outline" borderColor="gray">
+                <Flex direction="column" height="100%">
+                    <Box>
+                    <CardHeader>
+                        <Heading paddingBottom={2}>Teaching Assistant</Heading>
+                        <Text>McMaster University</Text>
+                        <Text color="gray">Department of Math & Stats</Text>
+                    </CardHeader>
+                    </Box>
 
+                    <Box marginTop="auto"> {/* Pushes the CardFooter to the bottom */}
+                    <Text textAlign="left" paddingTop={2} paddingX="4" paddingBottom={2} color="gray">
+                        May 2023 - June 2023
+                    </Text>
+                    </Box>
+                </Flex>
+            </Card>
+          </Box>
           <Box px={2}>
           <Card height="320px" variant="outline" borderColor="gray">
                 <Flex direction="column" height="100%">
