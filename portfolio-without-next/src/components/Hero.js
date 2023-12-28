@@ -37,7 +37,7 @@ const doubleArray = [
 
 
 const Hero = () => {
-    const topics = ["Mechatronics Engineer", "Software Developer", "3D Model"];
+    const topics = ["Embedded System", "Stress Analysis", "Software Solution", "3D Model"];
     const [index, setIndex] = useState(0);
     const [animateOut, setAnimateOut] = useState(false);
     const [text, setText] = useState(topics[index]);
@@ -63,7 +63,7 @@ const Hero = () => {
       <VStack align="flex-start" spacing="3" flexWrap="wrap">
       <Spacer /><Spacer />
         <Box>
-          <Heading fontSize="42px" fontFamily="Clashgrotesk, sans-serif;" >
+          <Heading fontSize={{base:"42px", sm:"90px"}} fontFamily="Clashgrotesk, sans-serif;" >
             You need a <Text as="span" color="red" className={`change-topic ${animateOut ? 'out' : ''}`}>{text},</Text>          
             </Heading>
         </Box>
@@ -111,8 +111,7 @@ const Hero = () => {
             Github
         </Button>
         </HStack>
-        <Spacer /><Spacer /><Spacer />
-        
+        <Spacer /><Spacer />
         
       </VStack>
     </Flex>
