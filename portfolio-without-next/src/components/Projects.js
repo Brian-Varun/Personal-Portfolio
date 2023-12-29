@@ -6,6 +6,7 @@ import SlideEx1 from './Projects/Project1';
 import SlideEx2 from './Projects/Project2';
 import SlideEx3 from './Projects/Project3';
 
+const API = "https://api.github.com";
 const project1_image= "https://images.unsplash.com/photo-1503614472-8c93d56e92ce?q=80&w=2011&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 const project2_image= "https://images.unsplash.com/photo-1567095761054-7a02e69e5c43?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 const project3_image= "https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -49,13 +50,18 @@ const Projects = () => {
         tags: ['Python', 'Python', 'Python'],
       },
     ];
-  
+    
+    
     return (
       <Flex justify="flex-start" width="100%" padding="10" paddingBottom={0}>
         <VStack align="flex-start" spacing="5" width="100%">
+          
           <Heading paddingX={0} id="projects">
             Projects
           </Heading>
+
+          <Text paddingX={0}>Github Projects</Text>
+          
           <Text paddingX={0}>Selected Projects</Text>
   
           {projects.map((project, index) => (

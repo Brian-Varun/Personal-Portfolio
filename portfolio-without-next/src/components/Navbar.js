@@ -32,7 +32,7 @@ const Navbar = () => {
       padding="2"
       position="fixed" // Add this line
       bg="white"
-      zIndex={1000} 
+      zIndex={9} 
     >
       <Box 
         as="button"  
