@@ -1,6 +1,32 @@
 import React, { useState, useEffect } from 'react';
-import { Flex, VStack, Box, Heading, Spacer, Text, HStack, Button, Divider, Tag, TagLeftIcon, TagLabel } from '@chakra-ui/react';
+import { Flex, Link , useToast, VStack, Box, Heading, Spacer, Text, HStack, Button, Divider, Tag, TagLeftIcon, TagLabel } from '@chakra-ui/react';
 import { FaEnvelope, FaLinkedin, FaGithub, FaPython, FaHtml5, FaCss3, FaJsSquare, FaReact } from 'react-icons/fa';
+import "./Hero.css"
+
+
+/* change the following to customize the page*/
+const topics = ["Embedded System,", "Stress Analysis,", "Software Solution,", "3D Model,"]; /* These are the words that change at the top*/
+const name = "Varun Kothandaraman"
+const degree = "Mechatronics" /* Replace this with job title after graduating*/
+const university = "McMaster" /* Replace this with company name after graduating*/
+const emaiLink = "mailto:kothandv@mcmaster.ca"
+const email = "kothandv@mcmaster.ca"
+const linkedin = "https://www.linkedin.com/in/varun-ram/"
+const github = "https://github.com/Nuravar"
+const description = (
+  <>
+  👋Hi! <br />
+    I am junior studying Mechatronics and Biomedical Engineering at McMaster University, <Text as="strong">currently looking for an internship for the 2024 Winter/Summer terms.</Text> 
+    {' '}Most recently, I have been working as a teaching assistant for{' '}
+    <Link href="https://www.eng.mcmaster.ca/ibiomed/" isExternal color="blue.500">
+      McMaster Engineering
+    </Link>{' '}and contributing to the{' '}
+    <Link href="https://www.mcmastersolarcar.com/" isExternal color="blue.500">
+      McMaster Solar Car Project
+    </Link>. <br /> <br /> In my free time, I enjoy playing the violin, graphic design, and playing football.
+  </>
+);
+/*-------------------------------------------*/
 
 
 const SolidworksIcon = () => {
@@ -37,7 +63,7 @@ const doubleArray = [
 
 
 const Hero = () => {
-    const topics = ["Embedded System", "Stress Analysis", "Software Solution", "3D Model"];
+    
     const [index, setIndex] = useState(0);
     const [animateOut, setAnimateOut] = useState(false);
     const [text, setText] = useState(topics[index]);
@@ -56,50 +82,53 @@ const Hero = () => {
         clearInterval(interval);
       };
     }, [index, topics]);
+
     
+
   return ( 
     
     <Flex justify="flex-start" width="100%" padding="10" flexDirection={{ base: 'column', md: 'row' }}>
       <VStack align="flex-start" spacing="3" flexWrap="wrap">
       <Spacer /><Spacer />
         <Box>
-          <Heading padding = '3' fontSize={{base:"42px", sm:"90px"}} fontFamily="Clashgrotesk, sans-serif;" >
-            You need a <Text as="span" color="red" className={`change-topic ${animateOut ? 'out' : ''}`}>{text},</Text>          
-            </Heading>
+          <Flex justify="flex-start" width="100%" flexDirection={{ base: 'column', md: 'row' }}>
+              <Heading fontSize={{ base: "33px", md: "60px",  lg: "90px"}} fontFamily="Clashgrotesk, sans-serif;">
+                  You need a
+                  <Box display={{ base: 'incline-block', md: 'block' }}>
+                      <Text fontWeight="bold" fontSize={{ base: "33px", md: "60px",  lg: "90px"}} fontFamily="Clashgrotesk, sans-serif;" as="span" color="red" className={`change-topic ${animateOut ? 'out' : ''}`}>
+                          {text}
+                      </Text>
+                  </Box>
+              </Heading>
+          </Flex>
+
         </Box>
-        <Box><Heading fontSize="42px" fontFamily="Clashgrotesk, sans-serif;">I make it happen.</Heading></Box>
-        <Spacer></Spacer><Spacer /><Spacer />
+        <Box><Heading fontSize="33px" fontFamily="Clashgrotesk, sans-serif;">I make it happen.</Heading></Box>
+        <Spacer></Spacer><Spacer />
         <Box>
             <Text fontSize="18px" lineHeight="17px" fontFamily="Clashgrotesk, sans-serif;" color="gray"> 
-                Varun Kothandaraman / Mechatronics Student @ McMaster 
+                {name} / {degree} Student @ {university} 
             </Text>
         </Box>
-        <Text color="gray" fontSize="15"> Pinned Projects </Text>
-        <HStack paddingBottom="1" flexWrap="wrap">
-          
-          <Button width="200px" colorScheme='gray' variant='outline'>
-            Project 1
-          </Button>
-          <Button width="200px" colorScheme='gray' variant='outline'>
-            Project 2
-          </Button>
-          <Button width="200px" colorScheme='gray' variant='outline'>
-            Project 3
-          </Button>
-
-        </HStack>
+        
         <Box paddingY ="1" width="100%">
           <Text>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum a rutrum velit. Donec semper volutpat mi, et tempor mi dapibus eget. Phasellus vel massa ut est mollis euismod. Morbi at arcu tempus, dignissim purus sit amet, pellentesque lorem. Vestibulum ultrices mi non eleifend dictum. Morbi in varius odio, non tempor tortor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec sed blandit dui. Cras eget mi rutrum, volutpat lectus at, volutpat erat. Integer a dapibus nunc. Nulla pharetra justo metus.
+            {description}
           </Text>
         </Box>
+        
         <HStack paddingY="1" flexWrap="wrap" >
+        <Link href={emaiLink} isExternal>
           <Button leftIcon={<FaEnvelope />} colorScheme='red' variant='outline'>
-            kothandv@mcmaster.ca
+            {email}
           </Button>
-          <Button leftIcon={<FaLinkedin />} colorScheme='linkedin' variant='outline'>
-            LinkedIn
-          </Button>
+          </Link>
+          <Link href={linkedin} isExternal>
+            <Button leftIcon={<FaLinkedin />} colorScheme='linkedin' variant='outline' >
+              LinkedIn  
+            </Button>
+          </Link>
+          <Link href={github} isExternal>
           <Button leftIcon={<FaGithub />} bgColor='#333' textColor='white' variant='outline'
             sx={{
               '&:hover': {
@@ -110,8 +139,9 @@ const Hero = () => {
           >
             Github
         </Button>
+        </Link>
         </HStack>
-        <Spacer /><Spacer />
+
         
       </VStack>
     </Flex>

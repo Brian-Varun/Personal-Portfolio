@@ -1,0 +1,7 @@
+.change-topic {
+    transition: opacity 0.5s ease-in-out; /* Adjust the duration and easing as needed */
+  }
+  
+  .change-topic.out {
+    opacity: 0;
+  }

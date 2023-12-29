@@ -11,8 +11,8 @@ function SlideEx({ isOpen, onClose }) {
   const gridColumnCount = useBreakpointValue({ base: 10, sm: 10, md: 10, lg: 10, xl: 10 });
 
   return (
-    <Slide direction="bottom" in={isOpen} style={{ zIndex: 10, }}>
-      <div style={{ maxHeight: '774px', overflowY: 'auto' }}>
+    <Slide direction="bottom" in={isOpen} style={{ zIndex: 10, position: 'fixed', top: 0, left: 0, right: 0 }}>
+      <div  style={{ maxHeight: '100%', overflowY: 'auto' }}>
         <Box
           p="40px"
           color="black"
@@ -90,7 +90,7 @@ function SlideEx({ isOpen, onClose }) {
               </Text> 
               </VStack>
               <VStack align="left" >
-              <Heading fontSize={20} mt="5" mb="2.5">My Role</Heading>
+              <Heading fontSize={20} >My Role</Heading>
               <UnorderedList >
                 <ListItem>Lorem ipsum dolor sit amet</ListItem>
                 <ListItem>Consectetur adipiscing elit</ListItem>
