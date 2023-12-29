@@ -101,6 +101,7 @@ const Hero = () => {
                   </Box>
               </Heading>
           </Flex>
+
         </Box>
         <Box><Heading fontSize="33px" fontFamily="Clashgrotesk, sans-serif;">I make it happen.</Heading></Box>
         <Spacer></Spacer><Spacer />
