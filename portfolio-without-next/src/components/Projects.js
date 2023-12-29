@@ -59,14 +59,15 @@ const Projects = () => {
           <Text paddingX={0}>Selected Projects</Text>
   
           {projects.map((project, index) => (
-            <Box >
+            <Box width="100%" height="auto" >
             <Button
-              key={index}
+              key={index}   
               paddingX={0}
               width="100%"
               as="article"
               onClick={(event) => handleButtonClick(event, project)}
-              variant="unstyled"
+              variant="unstyled" 
+              
             >
               <Card
                 height={{ base: '100%', sm: '200px' }}
@@ -75,32 +76,37 @@ const Projects = () => {
                 overflow="hidden"
                 variant="outline"
                 maxW={{ base: '100%', sm: '100%' }}
+                
               >
                 <Image
                   objectFit="cover"
-                  width="100%"
-                  height="300px"
+                  width={{ base: '100%', md: '80%' }}
+                  minWidth="40%"
+                  height="250px"
                   src={project.image}
                   alt="Project Card"
                 />
-                <Stack>
-                  <CardBody>
-                    <LinkOverlay href="#">
+                <Stack width="auto">
+                  <CardBody  width="auto">
                       <Heading>{project.name}</Heading>
-                      <Text py="2">{project.description}</Text>
-                    </LinkOverlay>
+                        <Box  whiteSpace="normal">
+                        <Text   maxWidth="100%" py="2">{project.description}</Text>
+                        </Box>           
+                    <Flex justifyContent="flex-end">
                     {project.tags.map((tag, tagIndex) => (
                       <Tag
                         key={tagIndex}
-                        position="absolute"
                         bottom="20px"
                         right={`${175 - tagIndex * 75}px`}
                         variant="subtle"
                         colorScheme="gray"
+                        mr="2" 
+                        mt={{ base: "2", sm: '8' }}
                       >
                         <TagLabel>{tag}</TagLabel>
                       </Tag>
                     ))}
+                    </Flex>
                   </CardBody>
                 </Stack>
               </Card>
