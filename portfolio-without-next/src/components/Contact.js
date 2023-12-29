@@ -1,7 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import { Flex, VStack, Box, Heading, Spacer, Text, HStack, Button, Divider, Tag, TagLeftIcon, TagLabel, Card, CardHeader, CardBody, CardFooter, Tab, useBreakpointValue } from '@chakra-ui/react';
+import { Flex, Link, VStack, Box, Heading, Spacer, Text, HStack, Button, Divider, Tag, TagLeftIcon, TagLabel, Card, CardHeader, CardBody, CardFooter, Tab, useBreakpointValue } from '@chakra-ui/react';
 import { MdOutlineArrowOutward, MdOutlineArrowCircleUp } from "react-icons/md";
 import { FaEnvelope, FaPhone, FaLinkedin, FaGithub, Facode, FaHeart, FaReact } from 'react-icons/fa';
+
+/* change the following to customize the page*/
+const emaiLink = "mailto:kothandv@mcmaster.ca"
+const email = "kothandv@mcmaster.ca"
+const linkedin = "https://www.linkedin.com/in/varun-ram/"
+const github = "https://github.com/Nuravar"
+/*-------------------------------------------*/
 
 
 const scrollToTop = () => {
@@ -54,26 +61,32 @@ const Contact = () => {
 
 
             <HStack width="100%" spacing={4} justify='left' flexWrap="wrap">
-                <Button leftIcon={<FaEnvelope />} colorScheme='red' variant='outline'>
-                    kothandv@mcmaster.ca
-                </Button>
+                <Link href={emaiLink} isExternal>
+                  <Button leftIcon={<FaEnvelope />} colorScheme='red' variant='outline'>
+                    {email}
+                  </Button>
+                </Link>
                 <Button leftIcon={<FaPhone />} colorScheme='orange' variant='outline'>
                     647-761-7753
                 </Button>
-                <Button leftIcon={<FaLinkedin />} colorScheme='linkedin' variant='outline'>
-                    LinkedIn
-                </Button>
+                <Link href={linkedin} isExternal>
+                  <Button leftIcon={<FaLinkedin />} colorScheme='linkedin' variant='outline' >
+                    LinkedIn  
+                  </Button>
+                </Link>
+                <Link href={github} isExternal>
                 <Button leftIcon={<FaGithub />} bgColor='#333' textColor='white' variant='outline'
-                    sx={{
+                  sx={{
                     '&:hover': {
-                        bgColor: "white",
-                        textColor: 'black',
+                      bgColor: "white",
+                      textColor: 'black',
                     },
-                    }}
+                  }}
                 >
-                    Github
-                </Button>
-            </HStack>
+                  Github
+              </Button>
+              </Link>
+                  </HStack>
             <HStack width="100%" spacing={4} justify='left' as="article">
                 <Button variant='link'onClick={scrollToTop} leftIcon={<MdOutlineArrowCircleUp/>}>
                     Back To Top
