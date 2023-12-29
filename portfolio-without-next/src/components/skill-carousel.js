@@ -28,6 +28,10 @@ const MatlabIcon = () => {
         </svg>
    );
 } 
+
+/* change the following to customize the slider, add an icon and the corresponding text*/
+/* when adding the icon make sure to properly center it using the x, y, and height values (svg's are recomended)*/
+const description = ""
 const doubleArray = [
     [FaPython, 'Python'],
     [InventorIcon, 'Inventor'],
@@ -38,6 +42,7 @@ const doubleArray = [
     [FaJsSquare, 'JavaScript'],
     [FaReact, 'React'],
 ];
+/*-------------------------------------------*/
 
 export default class Skills extends Component {
   render() {
@@ -89,12 +94,11 @@ export default class Skills extends Component {
           ))}
         </Slider>
         <Divider width="100%" borderColor="gray.400" />
-        {/* This is for Experience */}
+        {/* This is for Experience.js */}
         <Heading width="100%" paddingTop={10} id="experience">
         Experience        
         </Heading>
-        <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum a rutrum velit. Donec semper volutpat mi, et tempor mi tibulum a rutrum velit. Donec semper volutpat mi, et tempor.</Text>
-
+        <Text>{description}</Text>
       </Box>
    
     );
