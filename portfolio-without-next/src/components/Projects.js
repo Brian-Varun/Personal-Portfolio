@@ -59,15 +59,12 @@ const Projects = () => {
           <Text paddingX={0}>Selected Projects</Text>
   
           {projects.map((project, index) => (
-            <Box width="100%" height="auto" >
-            <Button
-              key={index}   
-              paddingX={0}
-              width="100%"
-              as="article"
-              onClick={(event) => handleButtonClick(event, project)}
-              variant="unstyled" 
-              
+            <Box 
+            width="100%" 
+            height="auto" 
+            as = 'button'
+            onClick={(event) => handleButtonClick(event, project)}
+            variant="unstyled" 
             >
               <Card
                 height={{ base: '100%', sm: '200px' }}
@@ -76,7 +73,9 @@ const Projects = () => {
                 overflow="hidden"
                 variant="outline"
                 maxW={{ base: '100%', sm: '100%' }}
-                
+                _hover={{ 
+                    transform: 'scale(1.01)'
+                    }}
               >
                 <Image
                   objectFit="cover"
@@ -110,7 +109,6 @@ const Projects = () => {
                   </CardBody>
                 </Stack>
               </Card>
-            </Button>
             </Box>
           ))}
   
