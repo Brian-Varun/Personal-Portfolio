@@ -63,7 +63,7 @@ const Hero = () => {
       <VStack align="flex-start" spacing="3" flexWrap="wrap">
       <Spacer /><Spacer />
         <Box>
-          <Heading fontSize={{base:"42px", sm:"90px"}} fontFamily="Clashgrotesk, sans-serif;" >
+          <Heading padding = '3' fontSize={{base:"42px", sm:"90px"}} fontFamily="Clashgrotesk, sans-serif;" >
             You need a <Text as="span" color="red" className={`change-topic ${animateOut ? 'out' : ''}`}>{text},</Text>          
             </Heading>
         </Box>

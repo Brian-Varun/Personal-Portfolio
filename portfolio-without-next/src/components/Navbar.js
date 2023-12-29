@@ -15,18 +15,34 @@ import {
 import { experienceID } from './Experience';
 
 
-
 const Navbar = () => {
   const mobileNav = useBreakpointValue({ base: true, md: false });
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
 
   return (
     <Flex
       justify="space-between"
       align="center"
       width="100%"
-      padding="5"
+      padding="2"
+      position="fixed" // Add this line
+      bg="white"
+      zIndex={1000} 
     >
-      <Box fontWeight="bold" fontSize="20px" paddingY="3" paddingX="9">
+      <Box 
+        as="button"  
+        fontWeight="bold" 
+        fontSize="20px" 
+        paddingY="3" 
+        paddingX="9"
+        variant="link"
+        onClick={scrollToTop}
+      >
         Varuṇ
       </Box>
 
@@ -46,9 +62,51 @@ const Navbar = () => {
         <HStack spacing="20" flexWrap="wrap">
           <Spacer />
           <Button variant="link" >Resume</Button>
-          <Button variant="link" onClick={() => { window.location.href = './Experience#experience'; }} >Experience</Button>
-          <Button variant="link" >Projects</Button>
-          <Button variant="link" onClick={() => { window.location.href = './Contact#contact'; }}>Contact</Button>
+          <Button
+            variant="link"
+            onClick={() => {
+              const experienceSection = document.getElementById('experience');
+
+              if (experienceSection) {
+                experienceSection.scrollIntoView({
+                  behavior: 'smooth',
+                  block: 'start',
+                });
+              }
+            }}
+          >
+            Experience
+          </Button>
+          <Button
+            variant="link"
+            onClick={() => {
+              const experienceSection = document.getElementById('projects');
+
+              if (experienceSection) {
+                experienceSection.scrollIntoView({
+                  behavior: 'smooth',
+                  block: 'start',
+                });
+              }
+            }}
+          >
+            Projects
+          </Button>
+          <Button
+            variant="link"
+            onClick={() => {
+              const experienceSection = document.getElementById('contact');
+
+              if (experienceSection) {
+                experienceSection.scrollIntoView({
+                  behavior: 'smooth',
+                  block: 'start',
+                });
+              }
+            }}
+          >
+            Contact
+          </Button>
         </HStack>
       )}
     </Flex>

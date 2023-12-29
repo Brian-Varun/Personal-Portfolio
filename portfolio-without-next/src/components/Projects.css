@@ -39,3 +39,17 @@
   .card-container:hover .image {
     transform: scale(1.1);
   }
+
+  @media screen and (max-width: 768px) {
+    /* Adjust the number of columns for smaller screens */
+    .grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    /* Further adjust the number of columns for even smaller screens */
+    .grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
