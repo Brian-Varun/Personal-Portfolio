@@ -9,7 +9,7 @@ import { MdOpenInNew } from 'react-icons/md';
 function SlideEx({ isOpen, onClose }) {
   return (
     <Slide direction="bottom" in={isOpen} style={{ zIndex: 10, }}>
-      <div style={{ maxHeight: '774px', overflowY: 'auto' }}>
+      <div  style={{ maxHeight: '740px', overflowY: 'auto' }}>
         <Box
           p="40px"
           color="black"

@@ -1,6 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { Flex, VStack, Box, Heading, Spacer, Text, HStack, Button, Divider, Tag, TagLeftIcon, TagLabel } from '@chakra-ui/react';
+import { Flex, Link , useToast, VStack, Box, Heading, Spacer, Text, HStack, Button, Divider, Tag, TagLeftIcon, TagLabel } from '@chakra-ui/react';
 import { FaEnvelope, FaLinkedin, FaGithub, FaPython, FaHtml5, FaCss3, FaJsSquare, FaReact } from 'react-icons/fa';
+
+/* change the following to customize the page*/
+const topics = ["Embedded System", "Stress Analysis", "Software Solution", "3D Model"]; /* These are the words that change at the top*/
+
+const emaiLink = "mailto:kothandv@mcmaster.ca"
+const email = "kothandv@mcmaster.ca"
+const linkedin = "https://www.linkedin.com/in/varun-ram/"
+const github = "https://github.com/Nuravar"
+/*-------------------------------------------*/
 
 
 const SolidworksIcon = () => {
@@ -37,7 +46,7 @@ const doubleArray = [
 
 
 const Hero = () => {
-    const topics = ["Embedded System", "Stress Analysis", "Software Solution", "3D Model"];
+    
     const [index, setIndex] = useState(0);
     const [animateOut, setAnimateOut] = useState(false);
     const [text, setText] = useState(topics[index]);
@@ -56,7 +65,9 @@ const Hero = () => {
         clearInterval(interval);
       };
     }, [index, topics]);
+
     
+
   return ( 
     
     <Flex justify="flex-start" width="100%" padding="10" flexDirection={{ base: 'column', md: 'row' }}>
@@ -93,13 +104,19 @@ const Hero = () => {
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum a rutrum velit. Donec semper volutpat mi, et tempor mi dapibus eget. Phasellus vel massa ut est mollis euismod. Morbi at arcu tempus, dignissim purus sit amet, pellentesque lorem. Vestibulum ultrices mi non eleifend dictum. Morbi in varius odio, non tempor tortor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec sed blandit dui. Cras eget mi rutrum, volutpat lectus at, volutpat erat. Integer a dapibus nunc. Nulla pharetra justo metus.
           </Text>
         </Box>
+        
         <HStack paddingY="1" flexWrap="wrap" >
+        <Link href={emaiLink} isExternal>
           <Button leftIcon={<FaEnvelope />} colorScheme='red' variant='outline'>
-            kothandv@mcmaster.ca
+            {email}
           </Button>
-          <Button leftIcon={<FaLinkedin />} colorScheme='linkedin' variant='outline'>
-            LinkedIn
-          </Button>
+          </Link>
+          <Link href={linkedin} isExternal>
+            <Button leftIcon={<FaLinkedin />} colorScheme='linkedin' variant='outline' >
+              LinkedIn  
+            </Button>
+          </Link>
+          <Link href={github} isExternal>
           <Button leftIcon={<FaGithub />} bgColor='#333' textColor='white' variant='outline'
             sx={{
               '&:hover': {
@@ -110,6 +127,7 @@ const Hero = () => {
           >
             Github
         </Button>
+        </Link>
         </HStack>
         <Spacer /><Spacer />
         
