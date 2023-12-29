@@ -19,7 +19,6 @@ function App() {
       <Hero />
       <Skills />
       <Experiences />
-      
       <Projects />
       <Contact />
     </VStack>
