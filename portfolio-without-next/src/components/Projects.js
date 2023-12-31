@@ -72,7 +72,7 @@ const Projects = () => {
       setSlideExVisible(false);
     };
   
-    
+  
     
     return (
       <Flex justify="flex-start" width="100%" padding="10" paddingBottom={0}>
@@ -164,11 +164,12 @@ const Projects = () => {
                     )}
                 </>
                 )}
-                <Button fontWeight="bold" variant="link" rightIcon={<BsArrowUpRightSquare />}>
-            Explore More Projects
-          </Button>
+            <Button fontWeight="bold" variant="link" rightIcon={<BsArrowUpRightSquare />}
+            >
+                Explore More Projects
+            </Button>
           <Text fontWeight="bold" paddingX={0}>Github Projects</Text>
-          <VStack spacing={4} align="center" p={4}>
+          <VStack spacing={4} align="center" p={4} w = '100%'>
             <Grid
               templateColumns={`repeat(${columns}, 1fr)`}
               gap={4}
