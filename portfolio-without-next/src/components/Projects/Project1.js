@@ -1,5 +1,5 @@
 // SlideEx.js
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useBreakpointValue, Card, CardBody, Stack, Grid, GridItem, Slide, Flex, Image, Box, Button, Text, Heading, Tag, TagLabel, List, ListItem, ListIcon, OrderedList,  UnorderedList, HStack, VStack} from '@chakra-ui/react';
 import { FaGithub } from 'react-icons/fa';
 import { ImCross } from 'react-icons/im';
