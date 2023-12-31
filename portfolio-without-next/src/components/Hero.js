@@ -90,31 +90,42 @@ const Hero = () => {
     
     <Flex justify="flex-start" width="100%" padding="10" flexDirection={{ base: 'column', md: 'row' }}>
       <VStack align="flex-start" spacing="3" flexWrap="wrap">
-      <Spacer /><Spacer />
+      <Spacer /><Spacer /><Spacer /><Spacer />
         
-      
-        <Box>
+      <HStack align="flex-start" spacing="3" flexWrap="wrap">
+        <Box position="relative" overflow="hidden" maxWidth="100%" height="325px">
+          <Image
+            style={{
+              width: '100%',
+              height: '100%',
+              objectFit: 'contain',
+              maxWidth: '100%', 
+              maxHeight: '100%', 
+            }}
+            src={profileImage}
+            alt="Profile"
+          />
+        </Box>
+        <Box position="relative" overflow="hidden">
           <Flex justify="flex-start" width="100%" flexDirection={{ base: 'column', md: 'row' }}>
-              <Heading fontSize={{ base: "33px", md: "60px",  lg: "90px"}} fontFamily="Clashgrotesk, sans-serif;">
-                  You need a
-                  <Box display={{ base: 'incline-block', md: 'block' }}>
-                      <Text fontWeight="bold" fontSize={{ base: "33px", md: "60px",  lg: "90px"}} fontFamily="Clashgrotesk, sans-serif;" as="span" color="red" className={`change-topic ${animateOut ? 'out' : ''}`}>
-                          {text}
-                      </Text>
-                  </Box>
-                  </Heading>
+            <Heading fontSize={{ base: "33px", md: "60px",  lg: "90px"}} fontFamily="Clashgrotesk, sans-serif;">
+              You need a
+              <Box display={{ base: 'incline-block', md: 'block' }}>
+                <Text fontWeight="bold" fontSize={{ base: "33px", md: "60px",  lg: "90px"}} fontFamily="Clashgrotesk, sans-serif;" as="span" color="red" className={`change-topic ${animateOut ? 'out' : ''}`}>
+                  {text}
+                </Text>
+              </Box>
+            </Heading>
           </Flex>
           <Heading fontSize="33px" fontFamily="Clashgrotesk, sans-serif;">I make it happen.</Heading>
         </Box>
-       
-
-
+      </HStack>
 
         <Spacer></Spacer><Spacer />
         <Box>
-            <Text fontSize="18px" lineHeight="17px" fontFamily="Clashgrotesk, sans-serif;" color="gray"> 
-                {name} / {degree} Student @ {university} 
-            </Text>
+          <Text fontSize="18px" lineHeight="17px" fontFamily="Clashgrotesk, sans-serif;" color="gray"> 
+              {name} / {degree} Student @ {university} 
+          </Text>
         </Box>
         <Flex>
         <Box paddingY ="1" width="100%">
@@ -122,7 +133,6 @@ const Hero = () => {
             {description}
           </Text>
         </Box>
-        <Image align="right" height="200px"src={profileImage} />
         </Flex>
         
         

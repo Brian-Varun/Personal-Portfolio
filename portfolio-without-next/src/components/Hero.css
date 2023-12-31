@@ -5,3 +5,10 @@
   .change-topic.out {
     opacity: 0;
   }
+  
+  @media (max-width: 600px) {
+    /* Adjust the height for smaller screens */
+    .your-image-class {
+      height: auto; /* or set a different height value */
+    }
+  }
