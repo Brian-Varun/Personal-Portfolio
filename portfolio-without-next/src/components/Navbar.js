@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   Flex,
   Box,
@@ -16,7 +16,25 @@ import { experienceID } from './Experience';
 
 
 const Navbar = () => {
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
+  const [visible, setVisible] = useState(true);
   const mobileNav = useBreakpointValue({ base: true, md: false });
+
+  const handleScroll = () => {
+    const currentScrollPos = window.pageYOffset;
+    setVisible(
+      (prevScrollPos > currentScrollPos &&
+        prevScrollPos - currentScrollPos > 70) ||
+        currentScrollPos < 10
+    );
+    setPrevScrollPos(currentScrollPos);
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [prevScrollPos, visible]);
+
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -30,9 +48,11 @@ const Navbar = () => {
       align="center"
       width="100%"
       padding="2"
-      position="fixed" // Add this line
+      position="fixed"
       bg="white"
-      zIndex={9} 
+      zIndex={9}
+      top={visible ? '0' : '-100px'} // Adjust the value based on the navbar height
+      transition="top 0.7s"
     >
       <Box 
         as="button"  

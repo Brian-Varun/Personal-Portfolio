@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Flex, Stack, VStack, Box, Heading, Text, HStack, useBreakpointValue, Button, Divider, Tag, TagLeftIcon, TagLabel, Card, CardHeader, CardBody, CardFooter, Image, LinkBox, LinkOverlay, SlideFade  } from '@chakra-ui/react';
+import { Flex, Stack, VStack, Grid, GridItem, Box, Heading, Text, HStack, useBreakpointValue, Button, Divider, Tag, TagLeftIcon, TagLabel, Card, CardHeader, CardBody, CardFooter, Image, LinkBox, LinkOverlay, SlideFade  } from '@chakra-ui/react';
 import { BsArrowUpRightSquare  } from 'react-icons/bs';
 import './Projects.css';
 import SlideEx1 from './Projects/Project1';
@@ -34,10 +34,15 @@ const projects = [
   },
 ];
 
-const reponame = 'albertlai431/slacker-chore';
 const repoNames = [
   {
     name: 'albertlai431/slacker-chore'
+  },
+  {
+    name: 'PacePlusPlus/PacePlusPlus'
+  },
+  {
+    name: 'PacePlusPlus/PacePlusPlus'
   },
   {
     name: 'PacePlusPlus/PacePlusPlus'
@@ -53,7 +58,8 @@ const repoNames = [
 const Projects = () => {
     const [selectedProject, setSelectedProject] = useState(null);
     const [isSlideExVisible, setSlideExVisible] = useState(false);
-  
+    const columns = useBreakpointValue({ base: 1, md: 2 }); // 1 column for mobile, 2 columns for desktop
+
     const handleButtonClick = (event, project) => {
         event.preventDefault(); // Prevent the default behavior (scrolling to the top)
       
@@ -158,14 +164,25 @@ const Projects = () => {
                     )}
                 </>
                 )}
-          <Text paddingX={0}>Github Projects</Text>
-          {repoNames.map((repo) => (
-            <GithubCard key={repo.name} repoName={repo.name} /> 
-          ))}
-         
-          <Button fontWeight="bold" variant="link" rightIcon={<BsArrowUpRightSquare />}>
+                <Button fontWeight="bold" variant="link" rightIcon={<BsArrowUpRightSquare />}>
             Explore More Projects
           </Button>
+          <Text fontWeight="bold" paddingX={0}>Github Projects</Text>
+          <VStack spacing={4} align="center" p={4}>
+            <Grid
+              templateColumns={`repeat(${columns}, 1fr)`}
+              gap={4}
+              w="100%"
+            >
+              {repoNames.map((repo) => (
+                <GridItem key={repo.name}>
+                  <GithubCard repoName={repo.name} />
+                </GridItem>
+              ))}
+            </Grid>
+          </VStack>
+         
+          
           <Divider />
         </VStack>
       </Flex>
