@@ -6,7 +6,7 @@ import SlideEx1 from './Projects/Project1';
 import SlideEx2 from './Projects/Project2';
 import SlideEx3 from './Projects/Project3';
 import GithubCard from './Github-Card'
-
+import ExtendedProjects from './Extended_Projects';
 
 /* change the following to customize the page*/
 
@@ -41,12 +41,6 @@ const repoNames = [
   {
     name: 'PacePlusPlus/PacePlusPlus'
   },
-  {
-    name: 'PacePlusPlus/PacePlusPlus'
-  },
-  {
-    name: 'PacePlusPlus/PacePlusPlus'
-  },
 ];
 
 
@@ -75,7 +69,7 @@ const Projects = () => {
   
     
     return (
-      <Flex justify="flex-start" width="100%" padding="10" paddingBottom={0}>
+      <Flex justify="flex-start" width="100%" padding={{ base: '10', sm: '10' }} paddingBottom={0}>
         <VStack align="flex-start" spacing="5" width="100%">
           
           <Heading paddingX={0} id="projects">
@@ -84,7 +78,12 @@ const Projects = () => {
 
           
 
-          <Text fontWeight="bold" paddingX={0}>Selected Projects</Text>
+          <Text fontWeight="bold" paddingX={0}>Click the Arrows to See More</Text>
+
+
+        <ExtendedProjects  />
+
+{/* 
           {projects.map((project, index) => (
             <Box 
             width="100%" 
@@ -167,8 +166,8 @@ const Projects = () => {
             <Button fontWeight="bold" variant="link" rightIcon={<BsArrowUpRightSquare />}
             >
                 Explore More Projects
-            </Button>
-          <Text fontWeight="bold" paddingX={0}>Github Projects</Text>
+            </Button> */}
+          <Text pt="5"fontWeight="bold" paddingX={0}>Github Projects</Text>
           <VStack spacing={4} align="center" p={4} w = '100%'>
             <Grid
               templateColumns={`repeat(${columns}, 1fr)`}

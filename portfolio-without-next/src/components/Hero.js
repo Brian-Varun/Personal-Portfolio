@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { Flex, Link , useToast, VStack, Box, Heading, Spacer, Text, HStack, Button, Divider, Tag, TagLeftIcon, TagLabel } from '@chakra-ui/react';
+import { Flex, Link , Image, useToast, VStack, Box, Heading, Spacer, Text, HStack, Button, Divider, Tag, TagLeftIcon, TagLabel } from '@chakra-ui/react';
 import { FaEnvelope, FaLinkedin, FaGithub, FaPython, FaHtml5, FaCss3, FaJsSquare, FaReact } from 'react-icons/fa';
 import "./Hero.css"
 
+import profileImage from './images/profile.png';
 
 /* change the following to customize the page*/
 const topics = ["Embedded System,", "Stress Analysis,", "Software Solution,", "3D Model,"]; /* These are the words that change at the top*/
@@ -90,6 +91,8 @@ const Hero = () => {
     <Flex justify="flex-start" width="100%" padding="10" flexDirection={{ base: 'column', md: 'row' }}>
       <VStack align="flex-start" spacing="3" flexWrap="wrap">
       <Spacer /><Spacer />
+        
+      
         <Box>
           <Flex justify="flex-start" width="100%" flexDirection={{ base: 'column', md: 'row' }}>
               <Heading fontSize={{ base: "33px", md: "60px",  lg: "90px"}} fontFamily="Clashgrotesk, sans-serif;">
@@ -99,23 +102,29 @@ const Hero = () => {
                           {text}
                       </Text>
                   </Box>
-              </Heading>
+                  </Heading>
           </Flex>
-
+          <Heading fontSize="33px" fontFamily="Clashgrotesk, sans-serif;">I make it happen.</Heading>
         </Box>
-        <Box><Heading fontSize="33px" fontFamily="Clashgrotesk, sans-serif;">I make it happen.</Heading></Box>
+       
+
+
+
         <Spacer></Spacer><Spacer />
         <Box>
             <Text fontSize="18px" lineHeight="17px" fontFamily="Clashgrotesk, sans-serif;" color="gray"> 
                 {name} / {degree} Student @ {university} 
             </Text>
         </Box>
-        
+        <Flex>
         <Box paddingY ="1" width="100%">
           <Text>
             {description}
           </Text>
         </Box>
+        <Image align="right" height="200px"src={profileImage} />
+        </Flex>
+        
         
         <HStack paddingY="1" flexWrap="wrap" >
         <Link href={emaiLink} isExternal>
