@@ -102,7 +102,7 @@ const ExtendedProjects = () => {
             }}
             variants={{
               hover: {
-                scale: 1.01,
+                scale: 1.0,
               },
             }}
             >

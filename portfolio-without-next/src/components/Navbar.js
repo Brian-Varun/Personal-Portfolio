@@ -46,7 +46,7 @@ const Navbar = () => {
         variant="link"
         onClick={scrollToTop}
       >
-        Varuṇ
+        ṇ
       </Box>
 
       {mobileNav ? (
