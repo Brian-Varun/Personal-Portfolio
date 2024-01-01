@@ -1,70 +1,77 @@
-# Getting Started with Create React App
+# Personal Portfolio Template
+The following is a personal static website/portfolio template hosted with GitHub Pages, built to showcase my recent projects. Site URL / Demo: []()
+Our website design was loosely based off the following portfolio by Jarvis Wang: [https://www.jarvis-wang.com/](https://www.jarvis-wang.com/)
+## Technology Stack
+HTML | CSS | [React.js](https://react.dev/) | [Chakra-UI](https://chakra-ui.com/) | [Framer Motion](https://www.framer.com/motion/) | [React-Slick](https://react-slick.neostack.com/)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Structure
+- Navigation Bar (2 versions) and Resume
+- Hero Section
+    - Name
+    - Degree/Profession
+    - Location
+    - Email, Linkedin, and Github
+- About Me
+    - Now Inspired by [Derek Sivers](https://sive.rs/now)
+    - Resume
+- Experience
+    - Carousel with position, company name, company department, and date
+- Projects
+    - 3 standout projects, alongside with a carousel to see others
+    - Selected Github repositories 
+- Contact Me page
 
-## Available Scripts
+## Sharing
+Project is open source. Feel free to make your own version.
 
-In the project directory, you can run:
+## Installation
+#### Prerequisites
+You should have [Node.js](https://nodejs.org/en) and [Git](https://git-scm.com/) installed on your PC. You should also own a GitHub account.
 
-### `npm start`
+#### Setup And Deployment 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. To Get Started, Fork this repository to your GitHub account:
+2. Clone the forked repo from your account using:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+   ```bash
+     git clone https://github.com/<your-username>/home.git
+   ```
 
-### `npm test`
+3. In each file change the variables at the top to your own information
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+4. Edit [title](./public/index.html#L34) and meta [description](./public/index.html#L13) in [public/index.html](./public/index.html).
 
-### `npm run build`
+5.  Change URL in [package.json](./package.json) file:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+   ```json
+    "homepage": "https://<your-username>.github.io/home"
+   ```
+6. Or for deployment at custom domain, refer [create-react-app.dev](https://create-react-app.dev/docs/deployment/#step-1-add-homepage-to-packagejson)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+7. After editing run the following bash commands:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+   ```bash
+   npm install
+   npm start
+   ```
 
-### `npm run eject`
+8. To deploy website, run:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+   ```bash
+    npm run build
+    npm run deploy
+   ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+   Or for deployment at \<username>.github.io, refer [READMEdocs/custom-deployment.md](./READMEdocs/custom-deployment.md) and [pages.js](./pages.js)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+9. Congrats your site is up and running. To see it live, visit:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+   ```https
+     https://<your-username>.github.io/home
+   ```
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Contributors
+[Brian Manomaisupat](https://www.linkedin.com/in/brian-mano/)
+[Varun Kothandaraman](https://www.linkedin.com/in/varun-ram/)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
