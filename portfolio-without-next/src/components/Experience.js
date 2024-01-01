@@ -86,9 +86,11 @@ export default class Experiences extends Component {
     };
 
     return (
-        
+      <>
+      <Heading width="100%" paddingX={10} paddingTop={10} id="experience">
+        Experience        
+      </Heading>
       <Box width="90%" padding="0 20px"> {/* Adjust padding as needed */}
-        
 
         <Slider {...sliderSettings}>
           
@@ -118,7 +120,7 @@ export default class Experiences extends Component {
         ))}
         </Slider>
       </Box>
-
+      </>
     );
   }
 }

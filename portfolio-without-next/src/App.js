@@ -10,15 +10,10 @@ function App() {
   return (
 	<Box width={{ base: "auto"}}>
 		  <VStack spacing={4} p={0} maxW="100%" align="center">
-      {/* <Navbar /> */}
       <IslandNavbar  />
-
-          <Hero />
-          <Skills />
-
-        
-        
-      
+      <Navbar />
+      <Skills /> 
+      <Hero />
       <Experiences />
       <Projects />
       <Contact />

@@ -2,14 +2,14 @@ import React, { useState, useEffect } from 'react';
 import { Flex, Link , Image, useToast, VStack, Box, Heading, Spacer, Text, HStack, Button, Divider, Tag, TagLeftIcon, TagLabel } from '@chakra-ui/react';
 import { FaEnvelope, FaLinkedin, FaGithub, FaPython, FaHtml5, FaCss3, FaJsSquare, FaReact } from 'react-icons/fa';
 import "./Hero.css"
+import Skills from "./skill-carousel";
 
 import profileImage from './images/profile.png';
 
 /* change the following to customize the page*/
-const topics = ["Embedded System,", "Stress Analysis,", "Software Solution,", "3D Model,"]; /* These are the words that change at the top*/
 const name = "Varun Kothandaraman"
-const degree = "Mechatronics" /* Replace this with job title after graduating*/
-const university = "McMaster" /* Replace this with company name after graduating*/
+const degree = "Mechatronics and Biomedical Engineering" /* Replace this with job title after graduating*/
+const university = "McMaster University" /* Replace this with company name after graduating*/
 const emaiLink = "mailto:kothandv@mcmaster.ca"
 const email = "kothandv@mcmaster.ca"
 const linkedin = "https://www.linkedin.com/in/varun-ram/"
@@ -64,69 +64,84 @@ const doubleArray = [
 
 
 const Hero = () => {
-    
-    const [index, setIndex] = useState(0);
-    const [animateOut, setAnimateOut] = useState(false);
-    const [text, setText] = useState(topics[index]);
   
-    useEffect(() => {
-      const interval = setInterval(() => {
-        setAnimateOut(true);
-        setTimeout(() => {
-          setIndex((prevIndex) => (prevIndex + 1) % topics.length);
-          setText(topics[index]);
-          setAnimateOut(false);
-        }, 500); 
-      }, 3000); 
-  
-      return () => {
-        clearInterval(interval);
-      };
-    }, [index, topics]);
 
     
 
   return ( 
-    
-    <Flex justify="flex-start" width="100%" padding="10" flexDirection={{ base: 'column', md: 'row' }}>
-      <VStack align="flex-start" spacing="3" flexWrap="wrap">
-      <Spacer /><Spacer /><Spacer /><Spacer />
-        
-      <HStack align="flex-start" spacing="3" flexWrap="wrap">
-        {/* <Box position="relative" overflow="hidden" maxWidth="100%" height="325px">
-          <Image
-            style={{
-              width: '100%',
-              height: '100%',
-              objectFit: 'contain',
-              maxWidth: '100%', 
-              maxHeight: '100%', 
-            }}
-            src={profileImage}
-            alt="Profile"
-          />
-        </Box> */}
-        <Box position="relative" overflow="hidden">
-          <Flex justify="flex-start" width="100%" flexDirection={{ base: 'column', md: 'row' }}>
-            <Heading fontSize={{ base: "33px", md: "60px",  lg: "90px"}} fontFamily="Clashgrotesk, sans-serif;">
-              You need a
-              <Box display={{ base: 'incline-block', md: 'block' }}>
-                <Text fontWeight="bold" fontSize={{ base: "33px", md: "60px",  lg: "90px"}} fontFamily="Clashgrotesk, sans-serif;" as="span" color="red" className={`change-topic ${animateOut ? 'out' : ''}`}>
-                  {text}
+
+    <>
+      <Flex align="center" justify="center" minHeight="100vh">
+          <VStack textAlign="center">
+            <Box overflow="hidden" align="left">
+              <Heading fontSize={{ base: "33px", md: "60px", lg: "150px" }} fontFamily="Clashgrotesk, sans-serif;">
+                {name}
+              </Heading>
+            </Box>
+            <HStack justify="space-between" width="100%" spacing="4"> {/* Adjusted spacing from "2" to "4" */}
+              <Box overflow="hidden" align="left">
+                <Text fontSize={{ base: "14px", md: "20px", lg: "20px" }} fontFamily="Clashgrotesk, sans-serif;">
+                  {degree} @ {university}
                 </Text>
               </Box>
-            </Heading>
-          </Flex>
-          <Heading fontSize="33px" fontFamily="Clashgrotesk, sans-serif;">I make it happen.</Heading>
-        </Box>
-      </HStack>
+              <Box overflow="hidden" align="right">
+                <Text fontSize={{ base: "14px", md: "20px", lg: "20px" }} fontFamily="Clashgrotesk, sans-serif;">
+                  Based in Hamilton, ON
+                </Text>
+              </Box>
+            </HStack>
+            <Box overflow="hidden" maxWidth="100%" height="470px">
+              <Image
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'contain',
+                  maxWidth: '100%',
+                  maxHeight: '100%',
+                }}
+                src={profileImage}
+                alt="Profile"
+              />
+            </Box>
+            <HStack spacing="4">
+              <Link href={emaiLink} isExternal>
+                <Button leftIcon={<FaEnvelope />} colorScheme='red' variant='outline'>
+                  {email}
+                </Button>
+              </Link>
+              <Link href={linkedin} isExternal>
+                <Button leftIcon={<FaLinkedin />} colorScheme='linkedin' variant='outline'>
+                  LinkedIn
+                </Button>
+              </Link>
+              <Link href={github} isExternal>
+                <Button
+                  leftIcon={<FaGithub />}
+                  bgColor='#333'
+                  textColor='white'
+                  variant='outline'
+                  sx={{
+                    '&:hover': {
+                      bgColor: "white",
+                      textColor: 'black',
+                    },
+                  }}
+                >
+                  Github
+                </Button>
+              </Link>
+            </HStack>
+          </VStack>
+        </Flex>
+    <Skills /> 
 
+    <Flex justify="flex-start" width="100%" paddingX="10" flexDirection={{ base: 'column', md: 'row' }}>
+      <VStack align="flex-start" spacing="3" flexWrap="wrap">
+        
         <Spacer></Spacer><Spacer />
-        <Box>
-          <Text fontSize="18px" lineHeight="17px" fontFamily="Clashgrotesk, sans-serif;" color="gray"> 
-              {name} / {degree} Student @ {university} 
-          </Text>
-        </Box>
+        <Heading width="100%" paddingTop={10} id="experience">
+            About Me        
+        </Heading>
         <Flex>
         <Box paddingY ="1" width="100%">
           <Text>
@@ -134,37 +149,11 @@ const Hero = () => {
           </Text>
         </Box>
         </Flex>
-        
-        
-        <HStack paddingY="1" flexWrap="wrap" >
-        <Link href={emaiLink} isExternal>
-          <Button leftIcon={<FaEnvelope />} colorScheme='red' variant='outline'>
-            {email}
-          </Button>
-          </Link>
-          <Link href={linkedin} isExternal>
-            <Button leftIcon={<FaLinkedin />} colorScheme='linkedin' variant='outline' >
-              LinkedIn  
-            </Button>
-          </Link>
-          <Link href={github} isExternal>
-          <Button leftIcon={<FaGithub />} bgColor='#333' textColor='white' variant='outline'
-            sx={{
-              '&:hover': {
-                bgColor: "white",
-                textColor: 'black',
-              },
-            }}
-          >
-            Github
-        </Button>
-        </Link>
-        </HStack>
-
-        
+  
       </VStack>
     </Flex>
 
+    </>
   );
 };
 

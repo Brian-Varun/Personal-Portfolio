@@ -94,13 +94,7 @@ export default class Skills extends Component {
           ))}
         </Slider>
         <Divider width="100%" borderColor="gray.400" />
-        {/* This is for Experience.js */}
-        <Heading width="100%" paddingTop={10} id="experience">
-        Experience        
-        </Heading>
-        <Text>{description}</Text>
       </Box>
-   
     );
   }
 }
