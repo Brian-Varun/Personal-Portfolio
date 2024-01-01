@@ -1,9 +1,4 @@
-import { useColorMode } from "@chakra-ui/color-mode";
-import {
-  VStack,
-  Box,
-  Heading,
-} from "@chakra-ui/layout";
+import { VStack, Box } from "@chakra-ui/layout";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Experiences from "./components/Experience";
@@ -16,14 +11,17 @@ function App() {
 	<Box width={{ base: "auto"}}>
 		  <VStack spacing={4} p={0} maxW="100%" align="center">
       <Navbar />
-      <Hero />
-      <Skills />
+          <Hero />
+          <Skills />
+
+        
+        
+      
       <Experiences />
       <Projects />
       <Contact />
     </VStack>
 	</Box>
-
   );
 }
 

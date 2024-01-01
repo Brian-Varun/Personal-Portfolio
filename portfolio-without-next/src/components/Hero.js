@@ -93,7 +93,7 @@ const Hero = () => {
       <Spacer /><Spacer /><Spacer /><Spacer />
         
       <HStack align="flex-start" spacing="3" flexWrap="wrap">
-        <Box position="relative" overflow="hidden" maxWidth="100%" height="325px">
+        {/* <Box position="relative" overflow="hidden" maxWidth="100%" height="325px">
           <Image
             style={{
               width: '100%',
@@ -105,7 +105,7 @@ const Hero = () => {
             src={profileImage}
             alt="Profile"
           />
-        </Box>
+        </Box> */}
         <Box position="relative" overflow="hidden">
           <Flex justify="flex-start" width="100%" flexDirection={{ base: 'column', md: 'row' }}>
             <Heading fontSize={{ base: "33px", md: "60px",  lg: "90px"}} fontFamily="Clashgrotesk, sans-serif;">

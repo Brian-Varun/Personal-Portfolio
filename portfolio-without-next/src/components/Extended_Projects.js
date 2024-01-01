@@ -8,6 +8,7 @@ import SlideEx1 from './Projects/Project1';
 import SlideEx2 from './Projects/Project2';
 import SlideEx3 from './Projects/Project3';
 import { MdOutlineArrowBackIosNew, MdArrowForwardIos, MdCircle } from "react-icons/md";
+import { motion } from "framer-motion";
 
 
 
@@ -88,18 +89,30 @@ const ExtendedProjects = () => {
     };
     return (
         
-        <Box width="100%" paddingX={0}>
-            <Box position="relative" width="100%">
-            
-        <Slider {...sliderSettings} >
-        {projects.map((project, index) => (
-            <Box 
-            width="100%" 
-            height="auto" 
-            as = 'button'
-            onClick={(event) => handleButtonClick(event, project)}
-            variant="unstyled" 
+      <Box width="100%" paddingX={0}>
+      <Box position="relative" width="100%">
+        <Slider {...sliderSettings}>
+          {projects.map((project, index) => (
+            <motion.div
+            initial={{ scale: 0.95 }}
+            whileHover="hover"
+            transition={{
+              duration: 1,
+              ease: "backInOut",
+            }}
+            variants={{
+              hover: {
+                scale: 1.01,
+              },
+            }}
             >
+              <Box
+                width="100%"
+                height="auto"
+                as="button"
+                onClick={(event) => handleButtonClick(event, project)}
+                variant="unstyled"
+              >
               <Card
                 height={{ base: '100%', sm: '200px' }}
                 width="100%"
@@ -107,9 +120,6 @@ const ExtendedProjects = () => {
                 overflow="hidden"
                 variant="outline"
                 maxW={{ base: '100%', sm: '100%' }}
-                _hover={{ 
-                    transform: 'scale(1.01)'
-                    }}
               >
                 <Image
                   objectFit="cover"
@@ -145,6 +155,7 @@ const ExtendedProjects = () => {
               </Card>
               
             </Box>
+            </motion.div>
           ))}
   
         
