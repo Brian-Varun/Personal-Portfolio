@@ -4,7 +4,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Flex, VStack, Box, Heading, Spacer, Text, HStack, Button, Divider, Tag, TagLeftIcon, TagLabel } from '@chakra-ui/react';
 import { MdOutlineArrowBackIosNew, MdArrowForwardIos, MdCircle } from "react-icons/md";
-import { FaEnvelope, FaLinkedin, FaGithub, FaPython, FaHtml5, FaCss3, FaJsSquare, FaReact } from 'react-icons/fa';
+import { FaEnvelope, FaLinkedin, FaGithub, FaPython, FaHtml5, FaCss3, FaJsSquare, FaReact, FaJava } from 'react-icons/fa';
 
 
 const SolidworksIcon = () => {
@@ -41,6 +41,7 @@ const doubleArray = [
     [FaCss3, 'CSS'],
     [FaJsSquare, 'JavaScript'],
     [FaReact, 'React'],
+    [FaJava, 'Java'],
 ];
 /*-------------------------------------------*/
 

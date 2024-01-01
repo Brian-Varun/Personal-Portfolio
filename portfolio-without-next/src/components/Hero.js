@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Flex, Link , Image, useToast, VStack, Box, Heading, Spacer, Text, HStack, Button, Divider, Tag, TagLeftIcon, TagLabel } from '@chakra-ui/react';
+import { Flex, Link , Image, useToast, VStack, Box, Heading, Spacer, Text, HStack, Button, Divider, Tag, TagLeftIcon, TagLabel, IconButton, useBreakpointValue } from '@chakra-ui/react';
 import { FaEnvelope, FaLinkedin, FaGithub, FaPython, FaHtml5, FaCss3, FaJsSquare, FaReact } from 'react-icons/fa';
 import "./Hero.css"
 import Skills from "./skill-carousel";
@@ -16,7 +16,7 @@ const linkedin = "https://www.linkedin.com/in/varun-ram/"
 const github = "https://github.com/Nuravar"
 const description = (
   <>
-  👋Hi! <br />
+  <strong>👋Hi!,</strong> <br /><br />
     I am junior studying Mechatronics and Biomedical Engineering at McMaster University, <Text as="strong">currently looking for an internship for the 2024 Winter/Summer terms.</Text> 
     {' '}Most recently, I have been working as a teaching assistant for{' '}
     <Link href="https://www.eng.mcmaster.ca/ibiomed/" isExternal color="blue.500">
@@ -66,31 +66,32 @@ const doubleArray = [
 const Hero = () => {
   
 
-    
+  const isMobile = useBreakpointValue({ base: true, md: false });
+
 
   return ( 
 
     <>
       <Flex align="center" justify="center" minHeight="100vh">
           <VStack textAlign="center">
-            <Box overflow="hidden" align="left">
-              <Heading fontSize={{ base: "33px", md: "60px", lg: "150px" }} fontFamily="Clashgrotesk, sans-serif;">
+            <Box overflow="hidden" align="center">
+              <Heading fontSize={{ base: "9vw", md: "9vw", lg: "9vw" }} fontFamily="Clashgrotesk, sans-serif;">
                 {name}
               </Heading>
             </Box>
-            <HStack justify="space-between" width="100%" spacing="4"> {/* Adjusted spacing from "2" to "4" */}
+            <HStack justify="space-between" spacing="4" width="100%">
               <Box overflow="hidden" align="left">
-                <Text fontSize={{ base: "14px", md: "20px", lg: "20px" }} fontFamily="Clashgrotesk, sans-serif;">
+                <Text fontSize={{ base: "2vw", md: "2vw", lg: "2vw" }} fontFamily="Clashgrotesk, sans-serif;">
                   {degree} @ {university}
                 </Text>
               </Box>
               <Box overflow="hidden" align="right">
-                <Text fontSize={{ base: "14px", md: "20px", lg: "20px" }} fontFamily="Clashgrotesk, sans-serif;">
+                <Text fontSize={{ base: "2vw", md: "2vw", lg: "2vw" }} fontFamily="Clashgrotesk, sans-serif;">
                   Based in Hamilton, ON
                 </Text>
               </Box>
             </HStack>
-            <Box overflow="hidden" maxWidth="100%" height="470px">
+            <Box overflow="hidden" paddingY="5" maxWidth="100%" width={{ base: "70vw", md: "350px", lg: "35vw" }}>
               <Image
                 style={{
                   width: '100%',
@@ -103,33 +104,66 @@ const Hero = () => {
                 alt="Profile"
               />
             </Box>
-            <HStack spacing="4">
-              <Link href={emaiLink} isExternal>
-                <Button leftIcon={<FaEnvelope />} colorScheme='red' variant='outline'>
+            <HStack pt="4" spacing="4" flexWrap="wrap">
+            <Link href={emaiLink} isExternal>
+              {isMobile ? (
+                <IconButton
+                  aria-label="Email"
+                  icon={<FaEnvelope />}
+                  colorScheme="red"
+                  variant="outline"
+                />
+              ) : (
+                <Button leftIcon={<FaEnvelope />} colorScheme="red" variant="outline">
                   {email}
                 </Button>
-              </Link>
-              <Link href={linkedin} isExternal>
-                <Button leftIcon={<FaLinkedin />} colorScheme='linkedin' variant='outline'>
+              )}
+            </Link>
+            <Link href={linkedin} isExternal>
+              {isMobile ? (
+                <IconButton
+                  aria-label="LinkedIn"
+                  icon={<FaLinkedin />}
+                  colorScheme="linkedin"
+                  variant="outline"
+                >
+                  LinkedIn
+                </IconButton>
+              ) : (
+                <Button
+                  leftIcon={<FaLinkedin />}
+                  colorScheme="linkedin"
+                  variant="outline"
+                >
                   LinkedIn
                 </Button>
-              </Link>
-              <Link href={github} isExternal>
+              )}
+            </Link>
+
+            <Link href={github} isExternal>
+              {isMobile ? (
+                <IconButton
+                  aria-label="GitHub"
+                  icon={<FaGithub />}
+                  bgColor="#333"
+                  color="white"
+                  variant="outline"
+                  _hover={{ bgColor: 'white', color: 'black' }}
+                >
+                  GitHub
+                </IconButton>
+              ) : (
                 <Button
                   leftIcon={<FaGithub />}
-                  bgColor='#333'
-                  textColor='white'
-                  variant='outline'
-                  sx={{
-                    '&:hover': {
-                      bgColor: "white",
-                      textColor: 'black',
-                    },
-                  }}
+                  bgColor="#333"
+                  textColor="white"
+                  variant="outline"
+                  _hover={{ bgColor: 'white', textColor: 'black' }}
                 >
-                  Github
+                  GitHub
                 </Button>
-              </Link>
+              )}
+            </Link>
             </HStack>
           </VStack>
         </Flex>
@@ -137,14 +171,13 @@ const Hero = () => {
 
     <Flex justify="flex-start" width="100%" paddingX="10" flexDirection={{ base: 'column', md: 'row' }}>
       <VStack align="flex-start" spacing="3" flexWrap="wrap">
-        
-        <Spacer></Spacer><Spacer />
+
         <Heading width="100%" paddingTop={10} id="experience">
             About Me        
         </Heading>
         <Flex>
         <Box paddingY ="1" width="100%">
-          <Text>
+          <Text width={{base:"100%", lg: "50%"}}>
             {description}
           </Text>
         </Box>

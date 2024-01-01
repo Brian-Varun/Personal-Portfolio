@@ -74,6 +74,7 @@ const IslandNavbar = () => {
           <Button
             variant="link"
             pl="4"
+            display={{ base: "none", sm: "block" }}
             onClick={() => {
               const experienceSection = document.getElementById('contact');
 

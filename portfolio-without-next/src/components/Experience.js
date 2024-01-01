@@ -2,9 +2,9 @@ import React, { Component } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { Card, CardHeader, Heading, Text, Tag, TagLeftIcon, Box, Flex, TagLabel } from "@chakra-ui/react";
+import { Card, CardHeader, Heading, Link, Text, Button, Tag, TagLeftIcon, Box, Flex, TagLabel } from "@chakra-ui/react";
 import { MdOutlineArrowBackIosNew, MdArrowForwardIos, MdCircle } from "react-icons/md";
-
+import { IoDocumentAttach } from "react-icons/io5"
 
 
 /* change the following to customize the page*/
@@ -90,7 +90,19 @@ export default class Experiences extends Component {
       <Heading width="100%" paddingX={10} paddingTop={10} id="experience">
         Experience        
       </Heading>
-      <Box width="90%" padding="0 20px"> {/* Adjust padding as needed */}
+      <Box paddingX={10} width="100%" align="left">
+      <Text pb="3"width={{base:"100%", lg: "50%"}}>
+        My journey in engineering has been shaped by a diverse range of experiences, each contributing to my growth. Below you can find a link with my resume attached:
+      </Text>
+      <Link href = "https://www.facebook.com/marketplace/item/708959441330993/?ref=browse_tab&referral_code=marketplace_top_picks&referral_story_type=top_picks" isExternal>
+      <Button paddingY="3" colorScheme="red" variant="outline" leftIcon={<IoDocumentAttach/>}>
+        Resume
+      </Button>
+      </Link>
+      
+      </Box>
+      
+      <Box width="90%" padding="0 20px" pt="3"> 
 
         <Slider {...sliderSettings}>
           
