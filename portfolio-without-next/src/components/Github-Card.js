@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Flex, Progress, Link, Stack, VStack, Box, Heading, Text, HStack, useBreakpointValue, Button, Divider, Tag, TagLeftIcon, TagLabel, Card, CardHeader, CardBody, CardFooter, Image, LinkBox, LinkOverlay, SlideFade  } from '@chakra-ui/react';
 import { FaCircle, FaEnvelope, FaPhone, FaLinkedin, FaGithub, Facode, FaHeart, FaReact } from 'react-icons/fa';
+import { motion } from "framer-motion";
 
 /* List of common languages - look at colors.json for other colors to reference*/
 const languageColors = {
@@ -73,11 +74,24 @@ const RepoInfo = ({ repoName }) => {
 
   return (
     <div style={{ width: '100%' }}>
+      <motion.div
+            initial={{ scale: 0.95 }}
+            whileHover="hover"
+            transition={{
+              duration: 1,
+              ease: "backInOut",
+            }}
+            variants={{
+              hover: {
+                scale: 1.0,
+              },
+            }}
+            >
     {repoData ? (
       <div style={{ width: '100%' }}>
         <Flex style={{ width: '100%' }}>
           <Box style={{ width: '100%' }}>
-            <Card style={{ width: '100%', minHeight: '178px' }} p="2" _hover={{transform: 'scale(1.01)'}}>
+            <Card style={{ width: '100%', minHeight: '178px' }} p="2">
               <Flex flexDirection={{ base: 'column', md: 'row' }}>
                     <Link href={repoData.repoLink} isExternal pb="1" pr="2" pt="1.5">
                         <Button leftIcon={<FaGithub />} bgColor='#333' textColor='white' variant='outline'
@@ -138,6 +152,7 @@ const RepoInfo = ({ repoName }) => {
       ) : (
         <p>Loading...</p>
       )}
+      </motion.div>
     </div>
   );
 };
